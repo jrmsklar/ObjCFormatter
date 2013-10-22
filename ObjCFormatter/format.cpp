@@ -70,7 +70,6 @@ int main(int argc, const char * argv[])
         return -1;
     }
 
-    return 0;
     string fileName = argv[1];
     ifstream is;
     is.open(fileName.c_str());
@@ -147,12 +146,16 @@ int main(int argc, const char * argv[])
     /* if only 2 command line arguments were specified, copy temporary file into original file */
     if (argc == 2) {
         of.open(fileName.c_str());
+        if (!of) {
+            cerr << "Error opening output file: " << argv[2] << "\nProgram will now quit.\n";
+            return -2;
+        }
     }
     else {
         of.open(argv[2]);
         if (!of) {
             cerr << "Error opening output file: " << argv[2] << "\nProgram will now quit.\n";
-            return -2;
+            return -3;
         }
     }
     
