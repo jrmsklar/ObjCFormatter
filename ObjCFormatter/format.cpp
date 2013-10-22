@@ -54,9 +54,19 @@ string removeSpaces(const string & s);
 
 int main(int argc, const char * argv[])
 {
-    if (argc != 2) {
-        printf("Expected either 2 or arguments on the command line, got %i.\n"
-               "Please specify the entire path of the .m file as the second argument.\n", argc);
+    string outpulFileName = "";
+    
+    if (argc == 2) {
+        cout << "Attempting to open file: " << argv[1] << "\n";
+    }
+    else if (argc == 3) {
+        cout << "Attempting to open file: " << argv[1] << " and write to output file " << argv[2] << "\n";
+    }
+    else {
+        cerr << "Expected either 2 or 3 arguments on the command line, got " << argc << ".\n"
+               "\tInstructions: Specify second argument as the full path to the input .m file.\n"
+               "\tOptional: Specify a third argument as the full path for the ouput file. Otherwise, will re-write the input file.\n"
+               "Please specify the entire path of the .m file as the second argument.\n";
         return -1;
     }
 
