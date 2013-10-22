@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03DB3251178EF72F00DFF16D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03DB3250178EF72F00DFF16D /* main.cpp */; };
+		03DB3251178EF72F00DFF16D /* format.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03DB3250178EF72F00DFF16D /* format.cpp */; };
 		03DB3253178EF72F00DFF16D /* ObjCFormatter.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 03DB3252178EF72F00DFF16D /* ObjCFormatter.1 */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		03DB324D178EF72F00DFF16D /* ObjCFormatter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjCFormatter; sourceTree = BUILT_PRODUCTS_DIR; };
-		03DB3250178EF72F00DFF16D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		03DB3250178EF72F00DFF16D /* format.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = format.cpp; sourceTree = "<group>"; };
 		03DB3252178EF72F00DFF16D /* ObjCFormatter.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ObjCFormatter.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +60,7 @@
 		03DB324F178EF72F00DFF16D /* ObjCFormatter */ = {
 			isa = PBXGroup;
 			children = (
-				03DB3250178EF72F00DFF16D /* main.cpp */,
+				03DB3250178EF72F00DFF16D /* format.cpp */,
 				03DB3252178EF72F00DFF16D /* ObjCFormatter.1 */,
 			);
 			path = ObjCFormatter;
@@ -117,7 +117,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DB3251178EF72F00DFF16D /* main.cpp in Sources */,
+				03DB3251178EF72F00DFF16D /* format.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +216,7 @@
 				03DB3258178EF72F00DFF16D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

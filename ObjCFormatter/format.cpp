@@ -54,7 +54,14 @@ string removeSpaces(const string & s);
 
 int main(int argc, const char * argv[])
 {
-    string fileName = "/Users/josh/Desktop/ObjCFormatter/ObjCFormatter/file.m";
+    if (argc != 2) {
+        printf("Expected either 2 or arguments on the command line, got %i.\n"
+               "Please specify the entire path of the .m file as the second argument.\n", argc);
+        return -1;
+    }
+
+    return 0;
+    string fileName = argv[1];
     ifstream is;
     is.open(fileName.c_str());
     if (!is) {
