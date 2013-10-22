@@ -40,8 +40,14 @@ bool isImplementationLine(const string & s);
  */
 string getPragmaMarkComment(const string & s);
 
-// returns '/* <comment< */'
+// returns '/* <comment> */'
 string formatPragmaMarkComment(const string & s);
+
+/*
+ returns a string equal to the method name + a ";\n" at the end of it.
+ If there is a '{' after the method name, removes it
+ */
+string sanitizeMethodName(const string & s);
 
 bool isInHeader(const vector<string> & v, const string & s);
 
@@ -106,6 +112,8 @@ int main(int argc, const char * argv[])
                 saveString(headerSectionLines, s);
             }
             else {
+                
+                string sanitizedMethodName = sanitizeMethodName(s);
                 
                 string newMethodDeclaration = s + ";\n";
                 
@@ -250,6 +258,13 @@ string getPragmaMarkComment(const string & s)
 string formatPragmaMarkComment(const string & s)
 {
     return "\n/* " + s + " */\n";
+}
+
+string sanitizeMethodName(const string & s)
+{
+    // implement this
+    string result = s;
+    return result;
 }
 
 bool isInHeader(const vector<string> & v, const string & s)
