@@ -54,7 +54,7 @@ string removeSpaces(const string & s);
 
 int main(int argc, const char * argv[])
 {
-    string outpulFileName = "";
+    string outpulFileName;
     
     if (argc == 2) {
         cout << "Attempting to open file: " << argv[1] << "\n";
@@ -65,7 +65,7 @@ int main(int argc, const char * argv[])
     else {
         cerr << "Expected either 2 or 3 arguments on the command line, got " << argc << ".\n"
                "\tInstructions: Specify second argument as the full path to the input .m file.\n"
-               "\tOptional: Specify a third argument as the full path for the ouput file. Otherwise, will re-write the input file.\n"
+               "\tOptional: Specify a third argument as the full path for the ouput file. Otherwise, will overwrite the input file.\n"
                "Please specify the entire path of the .m file as the second argument.\n";
         return -1;
     }
@@ -75,7 +75,7 @@ int main(int argc, const char * argv[])
     ifstream is;
     is.open(fileName.c_str());
     if (!is) {
-        cout << "Couldn't open file.\nProgram will not quit.\n";
+        cout << "Couldn't open file.\nProgram will now quit.\n";
         return -1;
     }
     string s;
@@ -139,12 +139,22 @@ int main(int argc, const char * argv[])
             of << endl << methodDeclarations;
     }
     
-    /* copy temporary file into original file */
     is.close();
     of.close();
     
+    /* write results to file */
     is.open(tempFileName.c_str());
-    of.open(fileName.c_str());
+    /* if only 2 command line arguments were specified, copy temporary file into original file */
+    if (argc == 2) {
+        of.open(fileName.c_str());
+    }
+    else {
+        of.open(argv[2]);
+        if (!of) {
+            cerr << "Error opening output file: " << argv[2] << "\nProgram will now quit.\n";
+            return -2;
+        }
+    }
     
     while (getline(is, s).good())
         of << s << endl;
