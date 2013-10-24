@@ -19,6 +19,165 @@ The program resides in `format.cpp`. Begin by compiling `format.cpp`. Do this by
 
 The Makefile generates an executable titled `format`. `format` takes either 1 or 2 extra arguments on the command line. The first argument that it takes is required, and is the full path of the input file to be formatted. This must be a `.m` file, and (in `format.cpp`'s current state, it must have a private `@interface`). The second argument is optional, and is the full path for the ouput file. If this argument is not specified, `format` will overwrite the input file. If this argument is specified, it will write to this file.
 
+Example
+-------
+`BSLoginViewController.m` (see below) was formatted using `format`, using the following commands:
+
+```
+make
+./format BSLoginViewController.m
+```
+
+***Before***
+
+```objective-c
+//
+//  BSLoginViewController.m
+//  Some Project
+//
+//  Created by Josh Sklar on 8/21/13.
+//  Copyright (c) 2013 Josh Sklar. All rights reserved.
+//
+
+#import "BSLoginViewController.h"
+
+@interface BSLoginViewController () <UITextFieldDelegate>
+
+@end
+
+@implementation BSLoginViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // code
+}
+
+#pragma mark - Internal methods
+
+- (void)setupView
+{
+    // code
+}
+
+- (void)setupSignInView
+{
+    // code
+}
+
+- (BOOL)validateFields
+{
+    // code
+    return YES;
+}
+
+#pragma mark - UITextField delegate methods
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    // code
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // code
+    return YES;
+}
+
+@end
+```
+
+***After***
+
+```objective-c
+//
+//  BSLoginViewController.m
+//  Some Project
+//
+//  Created by Josh Sklar on 8/21/13.
+//  Copyright (c) 2013 Josh Sklar. All rights reserved.
+//
+
+#import "BSLoginViewController.h"
+
+@interface BSLoginViewController () <UITextFieldDelegate>
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
+- (void)viewDidLoad;
+
+/* Internal methods */
+- (void)setupView;
+- (void)setupSignInView;
+- (BOOL)validateFields;
+
+/* UITextField delegate methods */
+- (void)textFieldDidBeginEditing:(UITextField *)textField;
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+
+@end
+
+@implementation BSLoginViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // code
+}
+
+#pragma mark - Internal methods
+
+- (void)setupView
+{
+    // code
+}
+
+- (void)setupSignInView
+{
+    // code
+}
+
+- (BOOL)validateFields
+{
+    // code
+    return YES;
+}
+
+#pragma mark - UITextField delegate methods
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    // code
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // code
+    return YES;
+}
+
+
+```
+
+
+
 Future
 -------
 
