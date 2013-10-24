@@ -1,4 +1,5 @@
 format
 *.tmp
 *.xcuserstate
+*.xcscheme
 .DS_Store
