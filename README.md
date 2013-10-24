@@ -24,7 +24,7 @@ The Makefile generates an executable titled `format`. `format` takes either 1 or
 1. in `format.cpp`'s current state, the `.m` it must have a private `@interface`.
 2. In its current state, the `.m` file must have all of the brackets following the function declaration on a new line. Ie:
 
-```
+```objective-c
 - (void)someFunction
 {
 }
