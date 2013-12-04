@@ -6,6 +6,28 @@
 //  Copyright (c) 2013 Josh Sklar. All rights reserved.
 //
 
+/*
+ sanitize.cpp parses an Objective-C implementation file, and moves 
+ every `{` at the end of a method declaration, private interface,
+ or implementation line, to the next line.
+ 
+ eg 1. it will transform a line like:
+ `- (void)someMethod {`
+ 
+ to lines like:
+ `- (void)someMethod
+ {
+ `
+ 
+ eg 2. it will transform a line like
+ `@interface SomeClass <SomeDelegateProtocol> {`
+ 
+ to lines like:
+ `@interface SomeClass <SomeDelegateProtocol>
+ {
+ `
+ */
+
 #include <iostream>
 #include <fstream>
 #include <algorithm>
@@ -17,6 +39,9 @@ using namespace std;
 static const char kInstanceMethodCharacter = '-';
 static const char kClassMethodCharacter = '+';
 static const char kStartBracketCharacter = '{';
+
+static const string kImplmentationString = "@implementation";
+static const string kInterfaceString = "@interface";
 
 char getFirstCharOfLine(const string & s);
 char getLastCharOfLine(const string & s);
