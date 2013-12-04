@@ -26,6 +26,13 @@
  `@interface SomeClass <SomeDelegateProtocol>
  {
  `
+
+ eg 3. it will NOT transform lines like
+ `if (someCondition) {`
+ 
+ or
+
+ `void (^someBlock)(void) = ^{`
  */
 
 #include <iostream>
