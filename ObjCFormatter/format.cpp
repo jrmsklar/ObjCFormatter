@@ -174,7 +174,7 @@ int main(int argc, const char * argv[])
     if(remove(tempFileName.c_str()) != 0 )
         cout << "Error deleting temporary file\n";
     else
-        cout << "Temporary ile successfully deleted\n";
+        cout << "Temporary file successfully deleted\n";
     
     is.close();
     of.close();
