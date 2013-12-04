@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0322E3CD184EE0A000FA9278 /* sanitize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0322E3CB184EE0A000FA9278 /* sanitize.cpp */; };
 		03DB3251178EF72F00DFF16D /* format.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03DB3250178EF72F00DFF16D /* format.cpp */; };
 		03DB3253178EF72F00DFF16D /* ObjCFormatter.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 03DB3252178EF72F00DFF16D /* ObjCFormatter.1 */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0322E3CB184EE0A000FA9278 /* sanitize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sanitize.cpp; sourceTree = "<group>"; };
 		03DB324D178EF72F00DFF16D /* ObjCFormatter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjCFormatter; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DB3250178EF72F00DFF16D /* format.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = format.cpp; sourceTree = "<group>"; };
 		03DB3252178EF72F00DFF16D /* ObjCFormatter.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ObjCFormatter.1; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				03DB3250178EF72F00DFF16D /* format.cpp */,
+				0322E3CB184EE0A000FA9278 /* sanitize.cpp */,
 				03DB3252178EF72F00DFF16D /* ObjCFormatter.1 */,
 			);
 			path = ObjCFormatter;
@@ -117,6 +120,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0322E3CD184EE0A000FA9278 /* sanitize.cpp in Sources */,
 				03DB3251178EF72F00DFF16D /* format.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
