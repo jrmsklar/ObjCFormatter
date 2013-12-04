@@ -39,9 +39,14 @@ using namespace std;
 static const char kInstanceMethodCharacter = '-';
 static const char kClassMethodCharacter = '+';
 static const char kStartBracketCharacter = '{';
+static const char kAtCharacter = '@';
 
 static const string kImplmentationString = "@implementation";
 static const string kInterfaceString = "@interface";
+
+bool lineIsMethodDeclaration(const string & s);
+bool lineIsInterfaceDeclaration(const string & s);
+bool lineIsImplementationDeclaration(const string & s);
 
 char getFirstCharOfLine(const string & s);
 char getLastCharOfLine(const string & s);
@@ -83,11 +88,18 @@ int main(int argc, const char * argv[])
 
         
         /* used the pragma marks for comments to groups of methods */
-        if (firstChar == kPoundSign) {
-            if (isPragmaMark(s)) {
-                string comment = getPragmaMarkComment(s);
-                methodDeclarations += formatPragmaMarkComment(comment);
-            }
+        if (lineIsInterfaceDeclaration(s)) {
+            // determine if it's either an interface or implementation
+            // if it is, sanitize the line
+        }
+        else if (lineIsImplementationDeclaration(s)) {
+            
+        }
+        else if (lineIsMethodDeclaration(s)) {
+            
+        }
+        else {
+            
         }
         
         /* if the line starts with a -/+, get the method stub */
@@ -164,6 +176,31 @@ int main(int argc, const char * argv[])
     of.close();
     
     return 0;
+}
+
+bool lineIsMethodDeclaration(const string & s)
+{
+    char firstChar = getFirstCharOfLine(s);
+    
+    if (firstChar == kClassMethodCharacter ||
+        firstChar == kInstanceMethodCharacter)
+        return true;
+    else
+        return false;
+}
+
+bool lineIsInterfaceDeclaration(const string & s)
+{
+    size_t found = s.find(kInterfaceString);
+    
+    return found != std::string::npos;
+}
+
+bool lineIsImplementationDeclaration(const string & s)
+{
+    size_t found = s.find(kImplmentationString);
+    
+    return found != std::string::npos;
 }
 
 char getFirstCharOfLine(const string & s)
