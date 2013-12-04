@@ -84,40 +84,25 @@ int main(int argc, const char * argv[])
     bool hasPassedImplementation = false;
     
     while (getline(is, s).good()) {
-        char firstChar = getFirstCharOfLine(s);
+
+        string replacementString = "";
 
         
         /* used the pragma marks for comments to groups of methods */
         if (lineIsInterfaceDeclaration(s)) {
-            // determine if it's either an interface or implementation
-            // if it is, sanitize the line
+            // compute teh replacementString
         }
         else if (lineIsImplementationDeclaration(s)) {
-            
+            // compute teh replacementString
         }
         else if (lineIsMethodDeclaration(s)) {
-            
+                     // compute teh replacementString
         }
         else {
-            
+            replacementString = s;
         }
         
-        /* if the line starts with a -/+, get the method stub */
-        if (firstChar == kInstanceMethodSign || firstChar == kClassMethodSign) {
-            if (!hasPassedImplementation) {
-                saveString(headerSectionLines, s);
-            }
-            else {
-                
-                string sanitizedMethodName = sanitizeMethodName(s);
-                
-                string newMethodDeclaration = s + ";\n";
-                
-                /* check to make sure it's not already in the header section */
-                if (!isInHeader(headerSectionLines, newMethodDeclaration))
-                    methodDeclarations += newMethodDeclaration;
-            }
-        }
+        // write the replacement string to the file
     }
     
     cout << "Result:\n\n";
