@@ -27,10 +27,8 @@ ie.
 
 ```objective-c
 @interface TheClass ()	
-// there also may be a name inside the
-// parenthesis above, which would create a category
 
-// declared properties or methods
+// Internal method or property declarations
 
 @end
 ```
