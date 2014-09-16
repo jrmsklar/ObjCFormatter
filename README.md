@@ -9,7 +9,7 @@ Objective-C Formatter is a C++ program used to format Objective-C files.
 
 Formatting Options:
 
-1. Put all function declarations in a `.m` file into the private `@interface` of a .m file.
+1. Put all function declarations in a `.m` file into the private `@interface` of a `.m` file.
 2. More to come in the future.
 
 
